@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Calculadora</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=l">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .flex-container  {
+            display: flex;
+            align-items: justify;
+            color: gray;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 style="font-weight: 400" class="display-4">CALCULADORA</h1>
+        </div>
+
+        <script>
+            function somar() {
+
+                var a = document.f1.a.value;
+                var b = document.f1.b.value;
+                var r = document.f1.c.value;
+                r = parseFloat(a) + parseFloat(b);
+                document.f1.c.value = r;
+
+            }
+
+            
+
+            function multiplicar() {
+
+                var a = document.f1.a.value;
+                var b = document.f1.b.value;
+                var r = document.f1.c.value;
+                r = parseFloat(a) * parseFloat(b);
+                document.f1.c.value = r;
+
+            }
+
+           
+
+            function calcular() {
+
+                var operacao = document.f1.operacao.value;
+
+                switch (operacao) {
+                    case "somar":
+                        somar();
+                        break;
+                    
+                    case "multiplicar":
+                        multiplicar();
+                        break;
+                    
+                    default:
+                        break;
+                }
+
+            }
+
+        </script>
+        <hr>
+        <form name="f1" action="calculadora.html" method="POST">
+
+            <div class="form-group">
+                <div class="flex-container row">
+
+                    <div class="col-md-4 col-sm-12">
+                        <input type="text" class="form-control" id="a" placeholder="Digite um número" name="a">
+
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        
+                        <select class="form-control" name="operacao" id="">
+                            
+                            <option value="">--Selecione um operação</option>
+                            <option value="somar">somar</option> 
+                            <option value="multiplicar">multiplicar</option>
+                            
+                        </select>
+                    
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <input type="text" class="form-control" id="b" placeholder="Digite um número" name="b">
+                    </div>
+
+                </div>
+                <hr>
+                <div class="d-flex flex-row-reverse">
+                    <div class="col-4">
+                        <input type="Button" name="" value="calcular" onclick="calcular()" class="btn btn-primary">
+                    </div>
+                </div>
+                <hr>
+                <label for="resultado">Resultado:</label>
+                <input readonly type="text" class="form-control" id="c" name="c" placeholder="">
+
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
